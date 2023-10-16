@@ -7,11 +7,11 @@ const nextConfig = {
     experimental:{
         serverActions: true
     },
-    webpack: (config, {isServer}) => {
-        if(!isServer){
-            config.resolve.fallback = {
-                fs: false
-            }
+    webpack: (config, {nextRuntime}) => {
+        if(typeof nextRuntime === "undefined"){
+            const { IgnorePlugin } = require('webpack')
+            const ignoreFs = new IgnorePlugin({resourceRegExp: /fs/})
+            config.plugins.push(ignoreFs);
         }
         config.module.rules.push({
             test: /\.node/,

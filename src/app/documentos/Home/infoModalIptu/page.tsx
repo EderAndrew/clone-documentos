@@ -1,3 +1,4 @@
+'use client'
 import { SessionContext } from "@/providers/SessionProvider"
 import { useContext } from "react"
 

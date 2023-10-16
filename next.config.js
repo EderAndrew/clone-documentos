@@ -7,12 +7,13 @@ const nextConfig = {
     experimental:{
         serverActions: true
     },
-    webpack: (config, {nextRuntime}) => {
-        if(typeof nextRuntime === "undefined"){
-            const { IgnorePlugin } = require('webpack')
-            const ignoreFs = new IgnorePlugin({resourceRegExp: /fs/})
-            config.plugins.push(ignoreFs);
-        }
+    webpack: (config, {isServer}) => {
+        if (!isServer) {
+            // set 'fs' to an empty module on the client to prevent this error on build --> Error: Can't resolve 'fs'
+            config.node = {
+              fs: "empty",
+            };
+          }
         config.module.rules.push({
             test: /\.node/,
             use: 'raw-loader',

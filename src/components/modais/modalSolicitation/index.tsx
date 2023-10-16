@@ -1,13 +1,13 @@
 'use client'
 import { useContext } from "react"
 import { SessionContext } from "@/providers/SessionProvider"
-import IconCloseCircle from "../../../../../public/icons/iconCloseCircle"
+import IconCloseCircle from "../../../../public/icons/iconCloseCircle"
 import { putHistoric, saveInfoMatricula, uploadDocument } from "@/api/route"
 import { useRouter } from "next/navigation"
-import InfoModalMatricula from "../InfoModalMatricula/page"
-import InfoModalCertidao from "../infoModalCertidao/page"
-import InfoModalIPTU from "../infoModalIptu/page"
-import IconCheckAll from "../../../../../public/icons/iconCheckAll"
+import InfoModalMatricula from "../InfoModalMatricula"
+import InfoModalCertidao from "../infoModalCertidao"
+import InfoModalIPTU from "../infoModalIptu"
+import IconCheckAll from "../../../../public/icons/iconCheckAll"
 import { Historic } from "@/interfaces/historic"
 
 export const ModalSolicitation = () => {

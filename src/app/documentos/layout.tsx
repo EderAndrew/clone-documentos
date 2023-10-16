@@ -1,14 +1,13 @@
-'use client'
 import { Navbar } from "@/components/navbar"
 import { SessionProvider } from "@/providers/SessionProvider"
-import { ModalPDFDocumento1 } from "./Home/modalDocumento/page"
+import { ModalPDFDocumento1 } from "../../components/modais/modalDocumento"
 import { Loading } from "@/components/loading"
-import { ModalPDFAdmin } from "./admin/modalAdmin/page"
-import { ModalClientSolicitation } from "./Home/NovaSolicitacao/ModalClient/page"
-import ModalCongrats from "./Home/NovaSolicitacao/ModalCongrats/page"
+import { ModalPDFAdmin } from "../../components/modais/modalAdmin"
+import { ModalClientSolicitation } from "../../components/modais/ModalClient"
+import ModalCongrats from "../../components/modais/ModalCongrats/page"
 import ModalProcessamento from "./admin/modalProcessamento/page"
-import { ModalSolicitation } from "./Home/modalSolicitation/page"
-import { ModalVisualizarSolicitacao } from "./Home/modalVisualizarSolicitacao/page"
+import { ModalSolicitation } from "../../components/modais/modalSolicitation"
+import { ModalVisualizarSolicitacao } from "../../components/modais/modalVisualizarSolicitacao"
 import { Suspense } from "react"
 
 type Props = {

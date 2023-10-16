@@ -2,7 +2,7 @@
 import {useContext, useEffect, useState} from 'react'
 import { SessionContext } from "@/providers/SessionProvider"
 import dynamic from 'next/dynamic'
-import IconCloseCircle from '../../../../../public/icons/iconCloseCircle'
+import IconCloseCircle from '../../../../public/icons/iconCloseCircle'
 
 const InvoicePDF = dynamic(() => import('@/components/pdfs/admin'),{
     ssr: false

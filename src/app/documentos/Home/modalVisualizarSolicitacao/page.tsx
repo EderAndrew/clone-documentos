@@ -4,7 +4,7 @@ import { SessionContext } from "@/providers/SessionProvider"
 import IconCloseCircle from "../../../../../public/icons/iconCloseCircle"
 import { saveInfoMatricula } from "@/api/route"
 import { useRouter } from "next/navigation"
-import InfoModalMatricula from "../infoModalMatricula/page"
+import InfoModalMatricula from "../InfoModalMatricula/page"
 import InfoModalCertidao from "../infoModalCertidao/page"
 import InfoModalIPTU from "../infoModalIptu/page"
 

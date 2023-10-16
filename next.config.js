@@ -7,7 +7,12 @@ const nextConfig = {
     experimental:{
         serverActions: true
     },
-    webpack: (config) => {
+    webpack: (config, {isServer}) => {
+        if(!isServer){
+            config.resolve.fallback = {
+                fs: false
+            }
+        }
         config.module.rules.push({
             test: /\.node/,
             use: 'raw-loader',

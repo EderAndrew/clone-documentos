@@ -9,7 +9,6 @@ import IconBxsUser from "../../../public/icons/iconBxUser"
 import IconLockPasswordFill from "../../../public/icons/iconLockPasswordFill"
 import { SessionContext } from "@/providers/sessionProvider"
 
-
 export const FormLogin = () => {
     const router = useRouter()
     const ctx = useContext(SessionContext)

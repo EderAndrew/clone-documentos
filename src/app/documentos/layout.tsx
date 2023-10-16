@@ -1,3 +1,4 @@
+'use client'
 import { Navbar } from "@/components/navbar"
 import { SessionProvider } from "@/providers/SessionProvider"
 import { ModalPDFDocumento1 } from "./Home/modalDocumento/page"

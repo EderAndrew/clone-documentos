@@ -7,7 +7,7 @@ import { User } from "@/interfaces/user"
 import { useContext } from "react"
 import IconBxsUser from "../../../public/icons/iconBxUser"
 import IconLockPasswordFill from "../../../public/icons/iconLockPasswordFill"
-import { SessionContext } from "@/providers/sessionProvider"
+import { SessionContext } from "@/providers/SessionProvider"
 
 export const FormLogin = () => {
     const router = useRouter()

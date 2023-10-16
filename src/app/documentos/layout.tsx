@@ -6,8 +6,8 @@ import { ModalPDFAdmin } from "./Admin/ModalAdmin/page"
 import { ModalClientSolicitation } from "./Home/NovaSolicitacao/ModalClient/page"
 import ModalCongrats from "./Home/NovaSolicitacao/ModalCongrats/page"
 import ModalProcessamento from "./Admin/ModalProcessamento/page"
-import { ModalSolicitation } from "./Home/ModalSolicitation/page"
-import { ModalVisualizarSolicitacao } from "./Home/ModalVisualizarSolicitacao/page"
+import { ModalSolicitation } from "./Home/modalSolicitation/page"
+import { ModalVisualizarSolicitacao } from "./Home/modalVisualizarSolicitacao/page"
 import { Suspense } from "react"
 
 type Props = {

@@ -24,7 +24,7 @@ const Documents = async() => {
                 <ClientTable myDocuments={myDocuments}/>
             </section>
             <div className="mt-12 flex justify-end">
-                <Link href={'/documentos/Home/nova_solicitacao'} className="flex items-center justify-center bg-purple-800 text-white p-2 h-14 w-48 rounded-full hover:bg-purple-900">Solicitar Documento</Link>
+                <Link href={'/documentos/Home/NovaSolicitacao'} className="flex items-center justify-center bg-purple-800 text-white p-2 h-14 w-48 rounded-full hover:bg-purple-900">Solicitar Documento</Link>
             </div>
         </section>
     )

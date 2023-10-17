@@ -1,6 +1,6 @@
 'use client'
 import { useContext } from 'react'
-import { SessionContext } from "@/providers/SessionProvider"
+import { SessionContext } from "@/providers/sessionProvider"
 
 export const Loading = () => {
     const ctx = useContext(SessionContext)

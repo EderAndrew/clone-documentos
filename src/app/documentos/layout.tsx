@@ -1,7 +1,6 @@
 import { Navbar } from "@/components/navbar"
-import { SessionProvider } from "@/providers/SessionProvider"
+import { SessionProvider } from "@/providers/sessionProvider"
 import { ModalPDFDocumento1 } from "../../components/modais/modalDocumento"
-import { Loading } from "@/components/loading"
 import { ModalPDFAdmin } from "../../components/modais/modalAdmin"
 import { ModalClientSolicitation } from "../../components/modais/ModalClient"
 import ModalCongrats from "../../components/modais/ModalCongrats/page"
@@ -9,6 +8,7 @@ import ModalProcessamento from "../../components/modais/modalProcessamento"
 import { ModalSolicitation } from "../../components/modais/modalSolicitation"
 import { ModalVisualizarSolicitacao } from "../../components/modais/modalVisualizarSolicitacao"
 import { Suspense } from "react"
+import Loading from "../loading"
 
 type Props = {
     children: React.ReactNode

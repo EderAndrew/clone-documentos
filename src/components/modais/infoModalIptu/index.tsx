@@ -1,5 +1,5 @@
 'use client'
-import { SessionContext } from "@/providers/SessionProvider"
+import { SessionContext } from "@/providers/sessionProvider"
 import { useContext } from "react"
 
 const InfoModalIPTU = () => {

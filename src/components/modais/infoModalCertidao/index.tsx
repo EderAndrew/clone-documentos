@@ -1,6 +1,6 @@
 'use client'
 import { userFormatDateCertidao } from "@/hooks/dateFormatCertidao"
-import { SessionContext } from "@/providers/SessionProvider"
+import { SessionContext } from "@/providers/sessionProvider"
 import { useContext, useState } from "react"
 
 const InfoModalCertidao = () => {

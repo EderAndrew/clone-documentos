@@ -1,5 +1,3 @@
-import { Request as interfaceDocument } from '@/interfaces/request';
-import { SessionContext } from '@/providers/SessionProvider';
 import { PDFViewer, StyleSheet, Document, Page, Text } from '@react-pdf/renderer'
 import { Document as ReactDocument, Page as ReactPage} from 'react-pdf'
 import { useContext, useState } from 'react';

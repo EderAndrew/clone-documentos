@@ -1,9 +1,9 @@
 import './globals.css'
 import type { Metadata } from 'next'
 import { Roboto } from 'next/font/google'
-import { Loading } from '@/components/loading'
 import { Suspense } from 'react'
-import { SessionProvider } from '@/providers/SessionProvider'
+import { SessionProvider } from '@/providers/sessionProvider'
+import Loading from './loading'
 
 const roboto = Roboto({ 
   weight:['400','700'],

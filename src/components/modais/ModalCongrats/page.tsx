@@ -1,7 +1,7 @@
 'use client'
 import { useContext } from "react"
 import IconFilePdf from "../../../../public/icons/iconFilePdf"
-import { SessionContext } from "@/providers/SessionProvider"
+import { SessionContext } from "@/providers/sessionProvider"
 import { useRouter } from "next/navigation"
 
 const ModalCongrats = () => {

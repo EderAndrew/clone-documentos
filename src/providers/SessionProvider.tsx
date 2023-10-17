@@ -11,8 +11,12 @@ export type DocInfo = {
 }
 
 type SessionContextType = {
-    home: boolean,
-    handleHome: (v: boolean) => void,
+    homePage: boolean,
+    handleHomePage: (v: boolean) => void,
+    adminPage: boolean,
+    handleAdminPage: (v: boolean) => void,
+    registerPage: boolean,
+    handleRegisterPage: (v: boolean) => void,
     openModal: boolean,
     handleModal: (v: boolean) => void,
     documentPdf: string,
@@ -58,7 +62,9 @@ type Props = {
 }
 
 export const SessionProvider = ({ children }: Props) => {
-   const [home, setHome] = useState(true)
+   const [homePage, setHomePage] = useState(false)
+   const [adminPage, setAdminPage] = useState(false)
+   const [registerPage, setRegisterPage] = useState(false)
    const [openModal, setOpenModal] = useState(false)
    const [documentPdf, setDocumentPdf] = useState("")
    const [newDocument, setNewDocument] = useState<Request>()
@@ -78,8 +84,14 @@ export const SessionProvider = ({ children }: Props) => {
    const [edit, setEdit] = useState(false)
    const [editHistoric, setEditHistoric] = useState<Historic>()
 
-    const handleHome = (load: boolean) => {
-        setHome(load)
+    const handleHomePage = (load: boolean) => {
+        setHomePage(load)
+    }
+    const handleAdminPage = (load: boolean) => {
+        setAdminPage(load)
+    }
+    const handleRegisterPage = (load: boolean) => {
+        setRegisterPage(load)
     }
     const handleModal = (value: boolean) => {
         setOpenModal(value)
@@ -146,8 +158,12 @@ export const SessionProvider = ({ children }: Props) => {
     }
 
     const provider = {
-        home,
-        handleHome,
+        homePage,
+        handleHomePage,
+        adminPage,
+        handleAdminPage,
+        registerPage,
+        handleRegisterPage,
         openModal,
         handleModal,
         documentPdf,

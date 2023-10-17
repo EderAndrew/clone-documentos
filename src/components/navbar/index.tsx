@@ -5,17 +5,15 @@ import IconHome from '../../../public/icons/iconHome'
 import IconDocument from '../../../public/icons/iconDocument'
 import IconLogoutBoxFill from '../../../public/icons/iconLogoutBoxFill'
 import IconBxUserCircle from '../../../public/icons/iconBxUserCircle'
-import { SessionContext } from '@/providers/SessionProvider'
+import { SessionContext } from '@/providers/sessionProvider'
 import IconChevronCompactLeft from '../../../public/icons/iconChevronCompactLeft'
 import { User } from '@/interfaces/user'
 import { UserCookie, logOut } from '@/api/route'
 import { useRouter } from 'next/navigation'
+import IconAdminFill from '../../../public/icons/iconAdminFill'
 
 export const Navbar = () => {
     const [openNavbar, setOpenNavbar] = useState(false)
-    const [homeClient, setHomeClient] = useState(true)
-    const [docMontreal, setDocMontreal] = useState(false)
-    const [adminBank, setAdminBank] = useState(false)
     const [session, setSession] = useState<User>()
     const ctx = useContext(SessionContext)
     const router = useRouter()
@@ -32,14 +30,19 @@ export const Navbar = () => {
     }
 
     const handlerHome = () => {
-        setHomeClient(true)
-        setDocMontreal(false)
-        setAdminBank(false)
+        ctx?.handleHomePage(true)
+        ctx?.handleAdminPage(false)
+        ctx?.handleRegisterPage(false)
     }
     const handleMontreal = () => {
-        setHomeClient(false)
-        setDocMontreal(true)
-        setAdminBank(false)
+        ctx?.handleHomePage(false)
+        ctx?.handleAdminPage(true)
+        ctx?.handleRegisterPage(false)
+    }
+    const handlerRegister = () => {
+        ctx?.handleHomePage(false)
+        ctx?.handleAdminPage(false)
+        ctx?.handleRegisterPage(true)
     }
 
     const handlerLogout = async() => {
@@ -70,7 +73,7 @@ export const Navbar = () => {
                     </div>
                     <div className={`transition-all flex flex-col gap-1 ${openNavbar ? '' : ''}  justify-center`}>
                         {session && session.op === "0" && (
-                            <Link href={'/documentos/Home'} onClick={handlerHome} className={`flex gap-3 ${homeClient || session.logged ? 'bg-white rounded-md text-[#333b8f]' : ''} p-2 m-2 rounded-md ${openNavbar ? 'pl-3' : 'pl-3'}`}>
+                            <Link href={'/documentos/Home'} onClick={handlerHome} className={`flex gap-3 ${ctx?.homePage ? 'bg-white rounded-md text-[#333b8f]' : ''} p-2 m-2 rounded-md ${openNavbar ? 'pl-3' : 'pl-3'}`}>
                                 <div className="text-xl"><IconHome /></div>
                                 {openNavbar && (
                                     <span className="cursor-pointer text-sm">Home Cliente</span>
@@ -79,7 +82,7 @@ export const Navbar = () => {
                         )}
                         
                         {session && session.op === "1" && (
-                            <Link href={'/documentos/admin'} onClick={handleMontreal} className={`flex gap-3 ${docMontreal || session.logged  ? 'bg-white rounded-md text-[#333b8f]' : ''} p-2 m-2  ${openNavbar ? 'pl-3' : 'pl-3'}`}>
+                            <Link href={'/documentos/admin'} onClick={handleMontreal} className={`flex gap-3 ${ctx?.adminPage ? 'bg-white rounded-md text-[#333b8f]' : ''} p-2 m-2  ${openNavbar ? 'pl-3' : 'pl-3'}`}>
                                 <div className="text-xl"><IconDocument /></div>
                                 {openNavbar && (
                                     <span className="cursor-pointer text-sm">Documentos Montreal</span>
@@ -91,14 +94,20 @@ export const Navbar = () => {
                                 <Link
                                     href={'/documentos/Home'} 
                                     onClick={handlerHome}
-                                    className={`flex gap-3 ${homeClient ? 'bg-white rounded-md text-[#333b8f]' : ''} p-2 m-2 rounded-md ${openNavbar ? 'pl-3' : 'pl-3'}`}>
+                                    className={`flex gap-3 ${ctx?.homePage ? 'bg-white rounded-md text-[#333b8f]' : ''} p-2 m-2 rounded-md ${openNavbar ? 'pl-3' : 'pl-3'}`}>
                                     <div className="text-xl"><IconHome /></div>
                                     {openNavbar && (
                                         <span className="cursor-pointer text-sm">Home Cliente</span>
                                     )}
                                 </Link>
-                                <Link href={'/documentos/admin'} onClick={handleMontreal} className={`flex gap-3 ${docMontreal ? 'bg-white rounded-md text-[#333b8f]' : ''} p-2 m-2  ${openNavbar ? 'pl-3' : 'pl-3'}`}>
+                                <Link href={'/documentos/admin'} onClick={handleMontreal} className={`flex gap-3 ${ctx?.adminPage ? 'bg-white rounded-md text-[#333b8f]' : ''} p-2 m-2  ${openNavbar ? 'pl-3' : 'pl-3'}`}>
                                     <div className="text-xl"><IconDocument /></div>
+                                    {openNavbar && (
+                                        <span className="cursor-pointer text-sm">Documentos Montreal</span>
+                                    )}
+                                </Link>
+                                <Link href={'/documentos/register'} onClick={handlerRegister} className={`flex gap-3 ${ctx?.registerPage ? 'bg-white rounded-md text-[#333b8f]' : ''} p-2 m-2  ${openNavbar ? 'pl-3' : 'pl-3'}`}>
+                                    <div className="text-xl"><IconAdminFill /></div>
                                     {openNavbar && (
                                         <span className="cursor-pointer text-sm">Documentos Montreal</span>
                                     )}

@@ -1,6 +1,6 @@
 'use client'
 import { useContext } from 'react'
-import { DocInfo, SessionContext } from "@/providers/SessionProvider"
+import { DocInfo, SessionContext } from "@/providers/sessionProvider"
 import { Request } from '@/interfaces/request'
 import IconEyeFill from '../../../public/icons/iconEyeFill'
 import IconFileDocumentEdit from '../../../public/icons/iconFileDocumentEdit'

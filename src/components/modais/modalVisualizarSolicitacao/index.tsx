@@ -1,6 +1,6 @@
 'use client'
 import { useContext } from "react"
-import { SessionContext } from "@/providers/SessionProvider"
+import { SessionContext } from "@/providers/sessionProvider"
 import IconCloseCircle from "../../../../public/icons/iconCloseCircle"
 import { saveInfoMatricula } from "@/api/route"
 import { useRouter } from "next/navigation"

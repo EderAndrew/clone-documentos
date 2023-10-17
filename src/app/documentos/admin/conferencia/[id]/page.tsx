@@ -8,7 +8,7 @@ import { UseBase64 } from "@/hooks/base64"
 import { useRouter } from 'next/navigation'
 import { useDateFormat } from "@/hooks/dateFormat"
 import { Historic } from "@/interfaces/historic"
-import { SessionContext } from "@/providers/SessionProvider"
+import { SessionContext } from "@/providers/sessionProvider"
 import { User } from "@/interfaces/user"
 import TableEdit from "@/components/tables/TableEdit"
 

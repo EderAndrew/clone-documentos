@@ -1,6 +1,5 @@
 'use server'
 import { SignUpForm } from "@/interfaces/SignUpForm";
-import { Estado } from "@/interfaces/estado";
 import { Historic } from "@/interfaces/historic";
 import { Request } from "@/interfaces/request";
 import { User } from "@/interfaces/user";
@@ -14,7 +13,7 @@ import { cookies } from 'next/headers'
   } */
 
 export const api = axios.create({
-    baseURL: `https://json-documentos.vercel.app`,
+    baseURL: `http://10.6.5.71:4000`,
     timeout: 1000,
     headers: {
         "Content-Type": "application/json",

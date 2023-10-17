@@ -14,7 +14,7 @@ import { cookies } from 'next/headers'
   } */
 
 export const api = axios.create({
-    baseURL: `https://json-documentos.vercel.app`,
+    baseURL: `http://10.6.5.71:4000`,
     timeout: 1000,
     headers: {
         "Content-Type": "application/json",

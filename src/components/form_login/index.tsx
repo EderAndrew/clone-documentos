@@ -4,12 +4,13 @@ import { useForm, SubmitHandler } from "react-hook-form"
 import { useRouter } from "next/navigation"
 import { logIn } from "@/api/route"
 import { User } from "@/interfaces/user"
-import { useContext } from "react"
+import { SessionContext } from "@/providers/SessionProvider"
+import { Suspense, useContext, useState } from "react"
 import IconBxsUser from "../../../public/icons/iconBxUser"
 import IconLockPasswordFill from "../../../public/icons/iconLockPasswordFill"
-import { SessionContext } from "@/providers/SessionProvider"
 
 export const FormLogin = () => {
+    const [errorMessage, setErrorMessage] = useState("")
     const router = useRouter()
     const ctx = useContext(SessionContext)
      
@@ -24,16 +25,23 @@ export const FormLogin = () => {
         ctx?.handleLoading(true)
         try{
             const userOp:User[] = await logIn(data) as unknown as User[]
+
+            if(!userOp[0]){
+                setErrorMessage("Usuário e/ou Senha estão incorretos!")
+            }
             
             if(userOp[0].op === "0"){
+                setErrorMessage("")
                 router.replace("/documentos/Home")
                 ctx?.handleLoading(false)
             }
             if(userOp[0].op === "1"){
+                setErrorMessage("")
                 router.replace("/documentos/admin")
                 ctx?.handleLoading(false)
             }
             if(userOp[0].op === "00"){
+                setErrorMessage("")
                 router.replace("/documentos/Home")
                 ctx?.handleLoading(false)
             }
@@ -71,10 +79,14 @@ export const FormLogin = () => {
                     </div>
                     {errors.pwd?.type === "required" && <p className="text-sm text-red-500">*Preencha o Campo Senha</p>}
                 </label>
-                {/* <label className="w-full flex justify-end mt-2">
-                    <p className="text-sm text-[#cc092f]">Esqueceu usuário e/ou Senha?</p>
-                </label> */}
-                <button className="bg-[#28dddb] text-[#062642] text-sm w-full mt-4 h-12 rounded-full shadow-md">ACESSAR</button>
+                {errorMessage && (
+                    <label className="w-full flex justify-center mt-2">
+                        <p className="text-sm text-[#cc092f]">{errorMessage}</p>
+                    </label>
+                )}
+                <Suspense fallback={<p>Carregando...</p>}>
+                    <button className="bg-[#28dddb] text-[#062642] text-sm w-full mt-4 h-12 rounded-full shadow-md">ACESSAR</button>
+                </Suspense>
             </div>
             
         </form>

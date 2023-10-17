@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 'use client'
 import { SubmitHandler, useForm } from "react-hook-form"
 import { Request } from "@/interfaces/request"
@@ -19,7 +20,7 @@ type Props={
     historic:Historic[] | undefined
 }
 
-const EditCertidao = ({document, oneHistoric, historic}:Props) => {
+const EditCertidao = ({ document, oneHistoric }:Props) => {
     const [cidades, setCidades] = useState<Cidade[]>([])
     const [cpfInput1, setCpfInput1] = useState(document.cpf_requerente_um as string)
     const [cpfInput2, setCpfInput2] = useState(document.cpf_requerente_dois as string)

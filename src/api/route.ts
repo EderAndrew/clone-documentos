@@ -14,7 +14,7 @@ import { cookies } from 'next/headers'
   } */
 
 export const api = axios.create({
-    baseURL: `${process.env.NEXT_PUBLIC_API}`,
+    baseURL: `https://json-documentos.vercel.app`,
     timeout: 1000,
     headers: {
         "Content-Type": "application/json",
@@ -32,7 +32,7 @@ export const ibgeApi = axios.create({
 })
 
 export const logIn = async(data: SignUpForm):Promise<User> => {
-    const info = await fetch(`${process.env.NEXT_PUBLIC_API}/users?register=${data.user}&password=${data.pwd}`,{
+    const info = await fetch(`https://json-documentos.vercel.app/users?register=${data.user}&password=${data.pwd}`,{
         method: 'GET',
         headers: {
             'Content-Type': 'application/json',
@@ -100,7 +100,7 @@ export const getDocuments = async () => {
 
 export const getRequestDocument = async (id: string) => {
     try{
-        const res = await fetch(`${process.env.NEXT_PUBLIC_API}/requests/${id}`,{
+        const res = await fetch(`https://json-documentos.vercel.app/requests/${id}`,{
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
@@ -117,7 +117,7 @@ export const getRequestDocument = async (id: string) => {
 
 export const putStartProcces = async(data:Request) => {
     try{
-        const res = await fetch(`${process.env.NEXT_PUBLIC_API}/requests/${data.id as string}`,{
+        const res = await fetch(`https://json-documentos.vercel.app/requests/${data.id as string}`,{
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',
@@ -167,7 +167,7 @@ export const putStartProcces = async(data:Request) => {
 }
 export const getDocumentbyNumber = async(id:string)=>{
     try{
-        const res = await fetch(`${process.env.NEXT_PUBLIC_API}/requests/${id}`,{
+        const res = await fetch(`https://json-documentos.vercel.app/requests/${id}`,{
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
@@ -183,7 +183,7 @@ export const getDocumentbyNumber = async(id:string)=>{
 
 export const uploadDocument = async(data:Request) => { 
     try{
-        const res = await fetch(`${process.env.NEXT_PUBLIC_API}/requests/${data.id as string}`,{
+        const res = await fetch(`https://json-documentos.vercel.app/requests/${data.id as string}`,{
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',
@@ -234,7 +234,7 @@ export const uploadDocument = async(data:Request) => {
 
 export const saveInfoMatricula = async(data: Request) => {
     try{
-        await fetch(`${process.env.NEXT_PUBLIC_API}/requests`,{
+        await fetch(`https://json-documentos.vercel.app/requests`,{
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -282,7 +282,7 @@ export const saveInfoMatricula = async(data: Request) => {
 
 export const putHistoric = async(data: Historic) => {
     try{
-        await fetch(`${process.env.NEXT_PUBLIC_API}/historics/${data.id as string}`,{
+        await fetch(`https://json-documentos.vercel.app/historics/${data.id as string}`,{
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',
@@ -304,7 +304,7 @@ export const putHistoric = async(data: Historic) => {
 }
 export const postHistoric = async(data: Historic) => {
     try{
-        await fetch(`${process.env.NEXT_PUBLIC_API}/historics`,{
+        await fetch(`https://json-documentos.vercel.app/historics`,{
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

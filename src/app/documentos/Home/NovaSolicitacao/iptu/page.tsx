@@ -8,7 +8,7 @@ import axios from "axios"
 import { User } from "@/interfaces/user"
 import { UserCookie } from "@/api/route"
 import { useDateFormat } from "@/hooks/dateFormat"
-import { SessionContext } from "@/providers/sessionProvider"
+import { SessionContext } from "@/providers/SessionProvider"
 
 type Props={
     estados: Estado [] | undefined

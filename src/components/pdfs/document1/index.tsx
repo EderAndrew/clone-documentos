@@ -1,4 +1,4 @@
-import { SessionContext } from '@/providers/sessionProvider';
+import { SessionContext } from '@/providers/SessionProvider';
 import {Page, Text, View, Document, StyleSheet, PDFViewer, Image} from '@react-pdf/renderer'
 import { useContext, useState } from 'react';
 import { Page as PageView, Document as DocumentView } from 'react-pdf';

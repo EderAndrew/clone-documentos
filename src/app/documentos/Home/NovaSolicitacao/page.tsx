@@ -1,6 +1,6 @@
 'use client'
 import { useContext, useEffect, useState } from 'react'
-import { SessionContext } from "@/providers/sessionProvider"
+import { SessionContext } from "@/providers/SessionProvider"
 import Matricula from './matricula/page'
 import Certidao from './certidao/page'
 import IPTU from './iptu/page'

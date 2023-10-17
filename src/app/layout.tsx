@@ -2,7 +2,7 @@ import './globals.css'
 import type { Metadata } from 'next'
 import { Roboto } from 'next/font/google'
 import { Suspense } from 'react'
-import { SessionProvider } from '@/providers/sessionProvider'
+import { SessionProvider } from '@/providers/SessionProvider'
 import Loading from './loading'
 
 const roboto = Roboto({ 

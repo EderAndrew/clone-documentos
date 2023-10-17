@@ -1,7 +1,7 @@
 'use client'
 import { useContext, useState } from "react"
 import IconSearch from "../../../public/icons/iconSearch"
-import { SessionContext } from "@/providers/sessionProvider"
+import { SessionContext } from "@/providers/SessionProvider"
 
 export const SearchInput = () => {
     const ctx = useContext(SessionContext)

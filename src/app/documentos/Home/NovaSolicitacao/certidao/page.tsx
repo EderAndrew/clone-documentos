@@ -8,7 +8,7 @@ import { Cidade } from "@/interfaces/cidade"
 import { useDateFormat } from "@/hooks/dateFormat"
 import { User } from "@/interfaces/user"
 import { UserCookie, getCartoriosImoveis } from "@/api/route"
-import { SessionContext } from "@/providers/sessionProvider"
+import { SessionContext } from "@/providers/SessionProvider"
 import { useCpfMask } from "@/hooks/cpfMask"
 import { CartorioImovel } from "@/interfaces/cartorioImovel"
 

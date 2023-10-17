@@ -4,7 +4,7 @@ import IconEyeFill from "../../../../public/icons/iconEyeFill"
 import IconFileDocumentEdit from "../../../../public/icons/iconFileDocumentEdit"
 import IconFilePdf from "../../../../public/icons/iconFilePdf"
 import { useContext, useState } from "react"
-import { SessionContext } from "@/providers/sessionProvider"
+import { SessionContext } from "@/providers/SessionProvider"
 import { getDocumentbyNumber } from "@/api/route"
 import { useRouter } from "next/navigation"
 

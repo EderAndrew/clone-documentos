@@ -1,5 +1,5 @@
 import { Navbar } from "@/components/navbar"
-import { SessionProvider } from "@/providers/sessionProvider"
+import { SessionProvider } from "@/providers/SessionProvider"
 import { ModalPDFDocumento1 } from "../../components/modais/modalDocumento"
 import { ModalPDFAdmin } from "../../components/modais/modalAdmin"
 import { ModalClientSolicitation } from "../../components/modais/ModalClient"
